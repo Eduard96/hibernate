@@ -13,5 +13,8 @@
 
         <mapping class="com.lessons.oneToOneExample.primary_key_is_foreign_key.Locations"/>
         <mapping class="com.lessons.oneToOneExample.primary_key_is_foreign_key.Person"/>
+
+        <mapping class="com.lessons.oneToOneExample.foreign_key.ARMPassport"/>
+        <mapping class="com.lessons.oneToOneExample.foreign_key.Person_2"/>
     </session-factory>
 </hibernate-configuration>

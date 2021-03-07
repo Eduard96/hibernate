@@ -17,9 +17,9 @@ public class Locations {
     @Column(name = "loc_name")
     private String locationName;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    //@PrimaryKeyJoinColumn
-    @JoinColumn(name = "p_location_id")
+    @OneToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    //@JoinColumn(name = "p_location_id")
     private Person person = new Person();
 
     public Integer getPersonLocationId() {
