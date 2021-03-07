@@ -16,5 +16,8 @@
 
         <mapping class="com.lessons.oneToOneExample.foreign_key.ARMPassport"/>
         <mapping class="com.lessons.oneToOneExample.foreign_key.Person_2"/>
+
+        <mapping class="com.lessons.ManyToOneExample.foreign_key.Man"/>
+        <mapping class="com.lessons.ManyToOneExample.foreign_key.ZodiacSign"/>
     </session-factory>
 </hibernate-configuration>
