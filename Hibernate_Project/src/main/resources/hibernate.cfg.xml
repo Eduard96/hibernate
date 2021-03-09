@@ -9,6 +9,8 @@
         <property name="hibernate.connection.username">user</property>
         <property name="hibernate.connection.password">user</property>
         <property name="hibernate.show_sql">true</property>
+<!--        <property name="hibernate.format_sql">true</property>-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
 
         <mapping class="com.lessons.oneToOneExample.primary_key_is_foreign_key.Locations"/>
@@ -19,5 +21,11 @@
 
         <mapping class="com.lessons.ManyToOneExample.foreign_key.Man"/>
         <mapping class="com.lessons.ManyToOneExample.foreign_key.ZodiacSign"/>
+
+        <mapping class="com.lessons.ManyToManyExample.Reader"/>
+        <mapping class="com.lessons.ManyToManyExample.Subscriber"/>
+
+        <mapping class="com.lessons.auto_generated_tables.Thing"/>
+        <mapping class="com.lessons.auto_generated_tables.Some"/>
     </session-factory>
 </hibernate-configuration>

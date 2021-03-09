@@ -1,24 +1,23 @@
-package com.lessons.ManyToOneExample.foreign_key;
+package com.lessons.ManyToManyExample;
 
+import javax.persistence.ManyToMany;
 import javax.persistence.*;
-import javax.persistence.ManyToOne;
+import java.util.Set;
 
-@Entity(name = "Man")
-@Table(name = "man")
-public class Man {
+@Entity
+@Table(name = "subscribers")
+public class Subscriber {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int id;
     @Column(name = "name")
     private String name;
     @Column(name = "lastname")
     private String lastname;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "zodiac_id")
-    private ZodiacSign zodiacSign;
+    @ManyToMany(mappedBy = "subscribers")
+    private Set<Reader> readers;
 
     public int getId() {
         return id;
@@ -44,21 +43,21 @@ public class Man {
         this.lastname = lastname;
     }
 
-    public ZodiacSign getZodiacSign() {
-        return zodiacSign;
+    public Set<Reader> getReaders() {
+        return readers;
     }
 
-    public void setZodiacSign(ZodiacSign zodiacSign) {
-        this.zodiacSign = zodiacSign;
+    public void setReaders(Set<Reader> readers) {
+        this.readers = readers;
     }
 
     @Override
     public String toString() {
-        return "Man{" +
+        return "Subscriber{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", zodiacSign=" + zodiacSign.getZodiacName() +
+                ", readers=" +
                 '}';
     }
 }

@@ -18,9 +18,9 @@ public class Locations {
     private String locationName;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    //@JoinColumn(name = "p_location_id")
-    private Person person = new Person();
+    //@PrimaryKeyJoinColumn
+    @JoinColumn(name = "p_location_id")
+    private Person person;
 
     public Integer getPersonLocationId() {
         return personLocationId;
@@ -44,7 +44,6 @@ public class Locations {
 
     public void setPerson(Person person) {
         this.person = person;
-        setPersonLocationId(person.getPersonId());
     }
 
     @Override

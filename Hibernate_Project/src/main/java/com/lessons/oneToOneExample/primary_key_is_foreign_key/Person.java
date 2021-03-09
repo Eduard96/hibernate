@@ -1,7 +1,7 @@
 package com.lessons.oneToOneExample.primary_key_is_foreign_key;
 
-import javax.persistence.*;
 import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "persons")
@@ -14,7 +14,11 @@ public class Person {
     @Column(name = "name")
     private String name;
 
-    //mappedBy has to match with field in Location class
+    /**
+     * mappedBy has to match with field in Location class
+     * optional = false is nullable = false
+     */
+
     @OneToOne(mappedBy = "person", fetch = FetchType.LAZY, optional = false)
     private Locations locations;
 
@@ -44,6 +48,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return "{Person " + getPersonId() + " " + getName() + "}";
+        return "{Person " + getPersonId() + " " + getName() + " " + locations.getLocationName() +"}";
     }
 }

@@ -14,7 +14,7 @@ public class ZodiacSign {
     @Column(name = "zodiac_name")
     private String zodiacName;
 
-    @OneToMany(mappedBy = "zodiacSign")
+    @OneToMany(mappedBy = "zodiacSign", fetch = FetchType.LAZY)
     private Set<Man> people;
 
     public int getId() {

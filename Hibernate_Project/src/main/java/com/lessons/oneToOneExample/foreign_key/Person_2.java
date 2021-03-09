@@ -14,7 +14,7 @@ public class Person_2 {
     @Column(name = "name")
     private String name;
 
-    //mappedBy has to match with field in Location class
+    //mappedBy has to match with field in ARMPassport class
     @OneToOne(mappedBy = "person2", fetch = FetchType.LAZY, optional = false)
     private ARMPassport arm_passport;
 
